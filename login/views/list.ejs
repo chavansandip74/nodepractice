@@ -1,0 +1,17 @@
+<h1>userlogin list</h1>
+<table border="2" width="100%">
+    <tr>
+    <th>sn</th>
+    <th>username</th>
+    <th>password</th>
+</tr>
+<% for(var i=0;i<list.length;i++)
+{
+    %>
+    <tr>
+        <td><%=i+1%></td>
+        <td><%=list[i].user_name%></td>
+        <td><%=list[i].password%></td>
+    </tr>
+<%}%>
+</table>

@@ -1,0 +1,25 @@
+<h1>employee list</h1>
+<table style="border: 2px solid black;">
+    <tr>
+        <th>edit</th> 
+        <th>delete</th>
+        <th>sn</th>
+        <th>name</th>
+        <th>mobile</th>
+        <th>married</th>
+        <th>gender</th>
+    </tr>
+    <% for(var i=0;i<list.length;i++)
+    {%>
+        <tr>
+            <td><a href="/edite/<%=list[i].eid%>"><button>edit</button></a></td>
+            <td><a href="/delete/<%= list[i].eid%>"><button>delete</button></a></td>
+            <td><%= i+1%></td>
+            <td><%= list[i].ename%></td>
+            <td><%= list[i].emobile%></td>
+            <td><%= list[i].emarried%></td>
+            <td><%=list[i].egender%></td>
+        </tr>
+     
+    <%}%>
+</table>

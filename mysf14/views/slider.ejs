@@ -1,0 +1,26 @@
+<h1>slider</h1>
+<form action="/save" method="post" enctype="multipart/form-data">
+    slider image:
+    <input type="file" name="simg"><br><br>
+    slider caption:
+    <input type="text" name="scaption"><br><br>
+    slider button link:
+    <input type="text" name="slink"><br><br>
+    slider button text:
+    <input type="text" name="stext"><br><br>
+    <button>save slider</button>
+</form>
+<table border="1" width="200px">
+    <% for(var i=0;i<list.length;i++)
+    {%>
+    <tr>
+        <td><a href="/edit/<%=list[i].sid%>"><button>edit</button></a></td>
+        <td><a href="/delete/<%=list[i].sid%>"><button>delete</button></a></td>
+        <td><%=i+1%></td>
+        <td><img src="uplods/<%=list[i].simg%>" width="150px"></td>
+        <td><%=list[i].scaption%></td>
+        <td><%=list[i].slink%></td>
+        <td><%=list[i].stext%></td>
+    </tr>
+    <%}%>
+</table>

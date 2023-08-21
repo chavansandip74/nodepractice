@@ -1,0 +1,67 @@
+<h1>bill</h1>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<form action="/save" method="post">
+    date:
+    <input type="date" name="bill_date" required><br><br>
+    customer name:
+    <input type="text" name="cname" required><br><br>
+
+    <table>
+        <tbody  id="mytbl">
+        <tr>
+            <th>product_name</th>
+            <th>product_price</th>
+            <th>product_qty</th>
+            <th>product_total</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" name="product_name[]"></td>
+            <td><input type="number" class="price" name="product_price[]" onkeyup="gettotal()" ></td>
+            <td><input type="number"class="qty" name="product_qty[]" onkeyup="gettotal()"></td>
+            <td><input type="number" class="ttl" name="product_total[]" readonly></td>
+            <td><button type="button" onclick="addrow()">+</button></td>
+            
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" style="text-align: right;">total</td>
+            <td>&#8377<span id="grand-total">0</span>/-</td>
+        </tr>
+    </tfoot>
+    </table>
+    <button >save</button>
+</form>
+<script>
+    function gettotal(){
+        var p=document.getElementsByClassName("price"); 
+        var q=document.getElementsByClassName("qty");
+        var t=document.getElementsByClassName("ttl");
+        var sum=0;
+        for(var i=0;i<p.length;i++)
+        {
+        var product_total=p[i].value*q[i].value;
+        t[i].value=product_total;
+        sum=sum+product_total;
+        }
+        $("#grand-total").html(sum);
+    }
+    function addrow()
+    {
+        var row=`
+        <tr>
+            <td><input type="text" name="product_name[]"></td>
+            <td><input type="number" class="price" name="product_price[]" onkeyup="gettotal()" ></td>
+            <td><input type="number"class="qty" name="product_qty[]" onkeyup="gettotal()"></td>
+            <td><input type="number" class="ttl" name="product_total[]" readonly></td>
+            <td><button type="button" onclick="removerow(this)">-</button></td>
+            
+        </tr>`;
+        $('#mytbl').append(row);
+    }
+    function removerow(elmt)
+    {
+       elmt.closest('tr').remove(); 
+    }
+</script>

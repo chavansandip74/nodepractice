@@ -1,0 +1,36 @@
+<%- include('head.ejs')%>
+
+<div class="container">
+    <h1>teacher list
+        <div class="float-right">
+            <form action="/search">
+                <input type="text" name="search" style="height:35px;">
+                <button class="bt btn-primary btn-sm" style="height:35px;">search</button>
+            </form>
+        </div>
+    </h1>
+
+    <table class="table table-bordered table-sm">
+        <tr>
+            <th></th>
+            <th>sn</th>
+            <th>name</th>
+            <th>mobile</th>
+            <th>email</th>
+            <th>bod</th>
+            <th>addr</th>
+        </tr>
+        <% for(var i=0;i<list.length;i++){%>
+           <tr>
+            <td><a href="/delete/:<% list[i].teacher_name%>"><button>delete</button></a></td>
+            <td><%=i+1%></td>
+            <td><%=list[i].teacher_name%></td>
+            <td><%=list[i].teacher_mobile%></td>
+            <td><%=list[i].teacher_email%></td>
+            <td><%=list[i].teacher_bod%></td>
+            <td><%=list[i].teacher_addr%></td>
+
+           </tr>
+        <% }%>
+    </table>
+</div>

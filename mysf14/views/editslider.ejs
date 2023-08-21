@@ -1,0 +1,14 @@
+<h1>edit slider</h1>
+<form action="/update" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="sid" value="<%=list.sid%>"><br><br>
+    slider image:
+    <input type="file" name="simg"><br><br>
+    slider caption:
+    <input type="text" name="scaption" value="<%=list.scaption%>"><br><br>
+    slider button link:
+    <input type="text" name="slink" value="<%=list.slink%>"><br><br>
+    slider button text:
+    <input type="text" name="stext" value="<%=list.stext%>"><br><br>
+    <button>save slider</button>
+    <img src="/uplods/<%=list.simg%>" alt="" width="200px">
+</form>

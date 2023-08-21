@@ -1,0 +1,25 @@
+<h1>image upload</h1>
+<form action="/save" method="post" enctype="multipart/form-data">
+<input type="file" name="profile" >
+<input type="text" name="uname">
+<input type="text" name="umobile">
+<button>save</button>
+</form>
+
+<table style="border: 3px solid black;">
+    <tr>
+        <th>sn</th>
+        <th>profile</th>
+        <th>name</th>
+        <th>mobile</th>
+    </tr>
+    <% for(var i=0;i<list.length;i++)
+    {%>
+     <tr>
+        <td><%=i+1%></td>
+        <td><img src="upload/<%=list[i].profile%>" width="100px"></td>
+        <td><%=list[i].uname%></td>
+        <td><%=list[i].umobile%></td>
+     </tr>
+    <%}%>
+</table>

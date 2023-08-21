@@ -1,0 +1,23 @@
+<h1>update employee</h1>
+<form action="/edite" method="post" style="background-color: blueviolet; 
+border: 2px solid black;margin: 20px;">
+<input type="hidden" name="eid" value="<%=eid%>">
+    employee name:
+    <input type="text" name="ename" value="<%=ename%>"><br><br>
+    employee mobile:
+    <input type="number" name="emobile" value="<%=emobile%>"><br><br>
+
+    married:
+    <select name="emarried" >
+        <option <%= (emarried=='no') ? 'selsected':''%>>no</option>
+
+        <option <%= (emarried=='yes') ? 'selsected':''%>>yes</option>    </select><br>
+    gender:
+    <input type="radio" name="egender" value="male"
+    <%=(egender == 'male')?'checked':''%>>male
+    <br><br>
+    <input type="radio" name="egender" value="female"
+    <%=(egender == 'female')?'checked':''%>>female
+    <br><br>
+    <button>save</button>
+</form>

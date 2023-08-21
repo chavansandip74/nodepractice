@@ -1,0 +1,26 @@
+<br>
+<h1> edit teacher  </h1>
+
+<form action="/edit_teacher" method="post">
+    <input type="hidden" name="teacher_id" id="" value="<%=tlist._id%>"><br><br>
+    name
+    <input type="text" name="teacher_name" value="<%=tlist.teacher_name%>"><br><br>
+    teacher_mobile
+    <input type="number" name="teacher_mobile" value="<%=tlist.teacher_mobile%>"><br><br>
+teacher_email
+    <input type="email" name="teacher_email" value="<%=tlist.teacher_email%>"><br><br>
+    teacher_password
+    <input type="password" name="teacher_password" id="teacher_password" value="<%=tlist.teacher_password%>"><button type="button"  onclick="showpass()">show</button><br><br>
+    <button>update teacher</button>
+</form>
+<script>
+    function showpass()
+    {
+        var pass=document.getElementById("teacher_password");
+        if(pass.type=="password")
+            pass.type="text";
+        else
+            pass.type="password";
+      
+      }
+</script>

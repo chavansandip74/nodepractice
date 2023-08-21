@@ -1,0 +1,17 @@
+<h1>bill list</h1>
+<table>
+    <tr>
+        <th>sn</th>
+        <th>date</th>
+        <th>customer_name</th>
+        <th>total_amount</th>
+    </tr>
+   <% for(var i=0;i<bills.length;i++){%>
+    <tr>
+       <td><%=i+1%></td>
+       <td><%=bills[i].bill_date%></td>
+       <td><%=bills[i].cname%></td>
+       <td><%=bills[i].ttl%></td>
+  <% }%>
+</tr>
+</table>

@@ -1,0 +1,55 @@
+<h1>registration form</h1>
+<form action="/save" method="post">
+    enter name:
+    <input type="text" name="student_name">
+    enter number:
+    <input type="number" name="student_mobile">
+    enter your email
+    <input type="email" name="student_emial">
+    <br>
+    <button>save now</button>
+</form>
+<h2>student list</h2>
+<table style="border: 2px solid black;">
+    <tr >
+        <th></th>
+        <th>sn</th>
+        <th>name</th>
+        <th>mobile</th>
+        <th>email</th>
+    </tr>
+    <% for(var i=0;i<list.length;i++){
+        %>
+        <tr>
+            <td>
+                <a href="/delete/<%=list[i].student_id%>"
+                    onclick="return confirm('are you sure')" >
+                    <button>delete</button>
+                </a></td>
+           <td>
+            <%=i+1%>
+           </td>
+           <td>
+            <%=list[i].student_name%>
+           </td>
+           <td>
+            <%=list[i].student_mobile%>
+           </td>
+           <td>
+            <%=list[i].student_emial%>
+          </td>
+         </tr>
+    <% }
+    if(list.length==0){
+        %>
+        <tr>
+            <td colspan="$" style="text-align: center;">
+                <br>no record found
+            <br>
+        <br>
+    </td>
+        </tr>
+        <%
+    }
+    %>
+</table>
